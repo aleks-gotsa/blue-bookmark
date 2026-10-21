@@ -21,7 +21,7 @@
   "homepage": "https://github.com/aleks-gotsa/blue-bookmark",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aleks-gotsa/blue-bookmark.git",
+    "url": "git+https://github.com/aleks-gotsa/blue-bookmark.git",
     "directory": "packages/n8n-node"
   },
   "main": "index.js",
