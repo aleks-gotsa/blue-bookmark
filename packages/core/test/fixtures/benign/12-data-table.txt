@@ -1,0 +1,8 @@
+Order ID   Customer            Items  Total     Status
+10231      Vista Studio        3      480.00    shipped
+10232      Pavlo Melnyk        1      59.90     processing
+10233      Zöld Kert Kft.      12     1,220.00  shipped
+10234      Marta Seifert       2      118.50    cancelled
+10235      Nordlicht GmbH      5      2,480.00  paid
+
+Generated 18 Oct 2026 by the orders service. Session: 3f9a2c1e-77b4-4d0e-9c5a-1b2e3d4f5a6b

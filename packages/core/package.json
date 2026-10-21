@@ -1,0 +1,55 @@
+{
+  "name": "@blue-bookmark/core",
+  "version": "1.0.0",
+  "description": "Static scanner for hidden and indirect prompt-injection content in text, HTML and Markdown. Offline, no LLM, zero runtime dependencies.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "prompt-injection",
+    "security",
+    "llm",
+    "agent",
+    "unicode",
+    "scanner",
+    "n8n"
+  ],
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "parse5": "^7.3.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "private": true,
+  "author": {
+    "name": "Aleks Gotsa",
+    "url": "https://github.com/aleks-gotsa"
+  },
+  "homepage": "https://github.com/aleks-gotsa/blue-bookmark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aleks-gotsa/blue-bookmark.git",
+    "directory": "packages/core"
+  }
+}

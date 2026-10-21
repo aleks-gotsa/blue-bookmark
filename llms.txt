@@ -1,0 +1,26 @@
+# Blue Bookmark
+
+> An n8n community node and TypeScript library that checks every email or document for hidden prompt injection before an AI agent reads it. It finds what a person reading the message cannot see: CSS-hidden HTML, invisible and lookalike Unicode, encoded instructions, fake chat structure and attacks split across subject, body and attachments. Score 0–100; 70 and above blocks. No LLM call, offline, no runtime dependencies. On unseen LLMail-Inject attacks that beat every Microsoft defence it blocks 81% (prototype: 41%), with 0 of 73 normal emails blocked.
+
+MIT license. It is the static layer that runs before an LLM guard: it does not judge what plain text means.
+
+## Docs
+
+- [README](README.md): what it is, how it works, results, quick start
+- [Setup](docs/SETUP.md): step-by-step install into n8n, wiring, library use
+- [AGENTS.md](AGENTS.md): instructions for an AI agent asked to install, use or change this project
+- [Evaluation](docs/EVAL.md): data, method, every number
+- [Limitations](docs/LIMITATIONS.md): what the results do not cover yet
+- [Architecture](docs/ARCHITECTURE.md): how one scan works
+
+## Files
+
+- [packages/core](packages/core/README.md): the scanner library and its API reference
+- [packages/n8n-node](packages/n8n-node/README.md): the n8n node and its parameter reference
+- [examples/n8n/email-guard.json](examples/n8n/email-guard.json): a ready workflow with two sample emails
+- [apps/demo](apps/demo/index.html): a single-file browser demo
+
+## Optional
+
+- [LLMail-Inject](https://huggingface.co/datasets/microsoft/llmail-inject-challenge): the public attack corpus used for testing
+- [n8n docs](https://docs.n8n.io/): installing and running n8n

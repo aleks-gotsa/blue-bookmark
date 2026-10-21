@@ -1,0 +1,11 @@
+node_modules/
+packages/*/dist/
+apps/demo/dist/
+*.log
+.DS_Store
+eval/data/
+NOTES.md
+CLAUDE.local.md
+WRITEUP_NOTES.md
+.env
+.env.*

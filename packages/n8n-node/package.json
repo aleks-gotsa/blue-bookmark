@@ -1,0 +1,64 @@
+{
+  "name": "n8n-nodes-blue-bookmark",
+  "version": "1.0.0",
+  "description": "Offline n8n node that catches hidden prompt injection in emails and documents before your AI agent reads them. No LLM calls, no dependencies.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "prompt-injection",
+    "indirect-prompt-injection",
+    "llm-security",
+    "ai-security",
+    "ai-agent",
+    "guardrails",
+    "email-security",
+    "hidden-text",
+    "unicode",
+    "homoglyph",
+    "static-analysis"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/aleks-gotsa/blue-bookmark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aleks-gotsa/blue-bookmark.git",
+    "directory": "packages/n8n-node"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --noEmit && tsup && node scripts/copy-icons.js && node scripts/check-bundle.js",
+    "dev": "tsc --watch",
+    "lint": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/BlueBookmark/BlueBookmark.node.js"
+    ]
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@blue-bookmark/core": "^1.0.0",
+    "n8n-workflow": "^1.70.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "bugs": {
+    "url": "https://github.com/aleks-gotsa/blue-bookmark/issues"
+  },
+  "author": {
+    "name": "Aleks Gotsa",
+    "url": "https://github.com/aleks-gotsa"
+  }
+}

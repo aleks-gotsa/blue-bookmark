@@ -1,0 +1,20 @@
+{
+  "name": "blue-bookmark-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "workspaces": [
+    "packages/core",
+    "packages/n8n-node"
+  ],
+  "scripts": {
+    "build": "npm run build -w @blue-bookmark/core && npm run build -w n8n-nodes-blue-bookmark && node apps/demo/build.js",
+    "test": "npm test -w @blue-bookmark/core && npm run build -w @blue-bookmark/core && npm test -w n8n-nodes-blue-bookmark",
+    "eval": "npm run build -w @blue-bookmark/core && node eval/run.ts eval/data/dev.jsonl --fixtures",
+    "prepare": "git config core.hooksPath .githooks"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4"
+  }
+}

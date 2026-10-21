@@ -1,0 +1,3 @@
+#!/bin/sh
+# Enforce Conventional Commits (rules in commitlint.config.mjs).
+npx --no-install commitlint --edit "$1"

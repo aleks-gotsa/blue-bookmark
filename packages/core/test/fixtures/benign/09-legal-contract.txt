@@ -1,0 +1,12 @@
+SERVICE AGREEMENT
+
+This Service Agreement ("Agreement") is entered into on 1 October 2026 between Nordlicht GmbH ("Provider") and Vista Studio s.r.o. ("Client").
+
+1. Services. Provider shall deliver the design services described in Annex A.
+2. Fees. Client shall pay the fees set out in Annex B within 14 days of invoice.
+3. Confidentiality. Each party shall keep the other party's confidential information secret and shall not disclose it to any third party without prior written consent.
+4. Term. This Agreement commences on the date above and continues for 12 months unless terminated earlier in accordance with clause 5.
+5. Termination. Either party may terminate with 30 days' written notice.
+
+Signed on behalf of Provider: ___________
+Signed on behalf of Client: ___________

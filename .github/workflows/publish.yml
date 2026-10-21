@@ -1,0 +1,42 @@
+# Publishes the n8n node to npm with a provenance statement when a version tag (v1.0.0) is pushed.
+# n8n accepts verified community nodes only when they are published from GitHub Actions with provenance.
+#
+# One-time setup, either:
+#   A. npm Trusted Publishing (no secret): on npmjs.com, package settings -> Trusted Publishers -> GitHub Actions,
+#      repository aleks-gotsa/blue-bookmark, workflow publish.yml. Needs the package to exist on npm already.
+#   B. A granular npm token with publish rights for n8n-nodes-blue-bookmark, stored as the NPM_TOKEN secret
+#      (needed for the very first publish).
+
+name: Publish
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # signs the provenance statement
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run build
+      - name: The tag matches the package version
+        run: |
+          v=$(node -p "require('./packages/n8n-node/package.json').version")
+          [ "v$v" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME does not match version $v"; exit 1; }
+      - name: Publish the node
+        run: npm publish -w n8n-nodes-blue-bookmark --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
